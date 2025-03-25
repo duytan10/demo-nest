@@ -18,15 +18,15 @@ import { RegisterUser } from './dto/register-user.dto';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @HttpCode(HttpStatus.OK)
   @Post('register')
   async register(@Body() registerUser: RegisterUser) {
     return this.authService.register({ ...registerUser });
   }
 
-  @HttpCode(HttpStatus.OK)
   @Post('login')
-  async signIn(@Body() signInDto: Record<string, any>) {
+  async signIn(@Body() signInDto: { email: string; password: string }) {
+    if (!signInDto.email || !signInDto.password)
+      throw new BadRequestException('Email and new password are required');
     return this.authService.validateUser(signInDto.email, signInDto.password);
   }
 

@@ -8,6 +8,7 @@ import { AuthController } from './auth/auth.controller';
 import { AuthService } from './auth/auth.service';
 import { UserController } from './users/user.controller';
 import { UsersService } from './users/users.service';
+import { MailModule } from './mail/mail.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -22,6 +23,7 @@ import { UsersService } from './users/users.service';
     }),
     AuthModule,
     UsersModule,
+    MailModule,
   ],
   controllers: [AppController, AuthController, UserController],
   providers: [AppService, AuthService],
