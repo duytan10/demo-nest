@@ -19,11 +19,23 @@ export class User {
   @Column()
   lastName: string;
 
-  @Column()
+  @Column({ default: '' })
   phone: string;
 
-  @Column()
+  @Column({ default: 1 })
   age: number;
+
+  @Column({ nullable: true })
+  activationToken: string;
+
+  @Column({ default: false })
+  active: boolean;
+
+  @Column({ type: 'varchar', length: 255, nullable: true })
+  resetToken: string;
+
+  @Column({ type: 'datetime', nullable: true })
+  resetTokenExpiry: Date;
 
   constructor(partial: Partial<User>) {
     Object.assign(this, partial);

@@ -19,7 +19,7 @@ export class UserController {
   @Get('profile')
   async getProfile(@Request() req): Promise<User | null> {
     const userReq = req.user;
-    const user = await this.usersService.findByEmail(userReq.email);
+    const user = await this.usersService.findById(userReq.sub);
     return user;
   }
 }

@@ -14,9 +14,9 @@ export class RegisterUser {
   @IsNotEmpty({ message: 'Last name should not be empty' })
   lastName: string;
 
-  @IsNotEmpty({ message: 'Phone should not be empty' })
   phone: string;
 
-  @IsNotEmpty({ message: 'Age should not be empty' })
   age: number;
+
+  activationToken: string;
 }

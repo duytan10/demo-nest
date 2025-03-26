@@ -20,6 +20,34 @@ export class UsersService {
     return user;
   }
 
+  async findUserLogin(email: string) {
+    const user = await this.usersRepository.findOne({
+      where: { email, active: true },
+    });
+    return user;
+  }
+
+  async findById(id: number) {
+    const user = await this.usersRepository.findOne({ where: { id } });
+    return user;
+  }
+
+  async findByToken(activationToken: string) {
+    if (!activationToken) return null;
+    const user = await this.usersRepository.findOne({
+      where: { activationToken },
+    });
+    return user;
+  }
+
+  async findByResetToken(resetToken: string) {
+    if (!resetToken) return null;
+    const user = await this.usersRepository.findOne({
+      where: { resetToken },
+    });
+    return user;
+  }
+
   async save(user: User) {
     return this.usersRepository.save(user);
   }

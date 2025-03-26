@@ -7,7 +7,6 @@ import { UsersModule } from './users/users.module';
 import { AuthController } from './auth/auth.controller';
 import { AuthService } from './auth/auth.service';
 import { UserController } from './users/user.controller';
-import { UsersService } from './users/users.service';
 import { MailModule } from './mail/mail.module';
 @Module({
   imports: [
