@@ -12,8 +12,8 @@ import { MailerModule } from '@nestjs-modules/mailer';
         port: 587,
         secure: false,
         auth: {
-          user: 'darion.mraz1@ethereal.email',
-          pass: 'jqGkrwU59BgYp6pUaX',
+          user: 'diana.gorczany14@ethereal.email ',
+          pass: 'u7GFgT3C97guN1YfA5',
         },
       },
       defaults: {

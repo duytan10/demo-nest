@@ -31,7 +31,7 @@ export class User {
   @Column({ default: false })
   active: boolean;
 
-  @Column({ type: 'varchar', length: 255, nullable: true })
+  @Column({ nullable: true })
   resetToken: string;
 
   @Column({ type: 'datetime', nullable: true })
